@@ -1,6 +1,7 @@
 import { Tabs } from "expo-router";
+import { BarChart3, CreditCard, HelpCircle, Home } from "lucide-react-native";
 import React from "react";
-import { Platform, Text } from "react-native";
+import { Platform } from "react-native";
 
 export default function TabLayout() {
   return (
@@ -20,36 +21,28 @@ export default function TabLayout() {
         name="index"
         options={{
           title: "Home",
-          tabBarIcon: ({ color }) => (
-            <Text style={{ color, fontSize: 24 }}>🏠</Text>
-          ),
+          tabBarIcon: ({ color }) => <Home size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="analytics"
         options={{
           title: "Analytics",
-          tabBarIcon: ({ color }) => (
-            <Text style={{ color, fontSize: 24 }}>📊</Text>
-          ),
+          tabBarIcon: ({ color }) => <BarChart3 size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="payments"
         options={{
           title: "Payments",
-          tabBarIcon: ({ color }) => (
-            <Text style={{ color, fontSize: 24 }}>💳</Text>
-          ),
+          tabBarIcon: ({ color }) => <CreditCard size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="support"
         options={{
           title: "Support",
-          tabBarIcon: ({ color }) => (
-            <Text style={{ color, fontSize: 24 }}>🆘</Text>
-          ),
+          tabBarIcon: ({ color }) => <HelpCircle size={24} color={color} />,
         }}
       />
     </Tabs>
