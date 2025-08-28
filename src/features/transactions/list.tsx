@@ -35,26 +35,38 @@ export const TransactionList = () => {
                   <mccCategory.icon size={21} color={mccCategory.color} />
                 </View>
                 <View style={styles.transactionInfo}>
-                  <Text style={styles.merchant}>
-                    {transaction.merchantName}
+                  <View style={styles.meta}>
+                    <Text style={styles.merchant}>
+                      {transaction.merchantName}
+                    </Text>
+                    <Text style={styles.date}>
+                      {new Date(transaction.date).toLocaleTimeString([], {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      })}{" "}
+                      {new Date(transaction.date).toLocaleDateString([], {
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric",
+                      })}
+                    </Text>
+                  </View>
+                  <Text
+                    style={[
+                      styles.amount,
+                      {
+                        color:
+                          transaction.type === "credit"
+                            ? tailwindColors.green[600]
+                            : styles.amount.color,
+                      },
+                    ]}
+                  >
+                    {transaction.type === "credit" ? "+" : ""}$
+                    {Math.abs(transaction.amount).toFixed(2)}
                   </Text>
-                  <Text style={styles.date}>{transaction.date}</Text>
                 </View>
               </View>
-              <Text
-                style={[
-                  styles.amount,
-                  {
-                    color:
-                      transaction.type === "credit"
-                        ? tailwindColors.green[500]
-                        : styles.amount.color,
-                  },
-                ]}
-              >
-                {transaction.type === "credit" ? "+" : ""}$
-                {Math.abs(transaction.amount).toFixed(2)}
-              </Text>
             </View>
           );
         })}
@@ -70,7 +82,7 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     gap: 1,
-    backgroundColor: tailwindColors.stone[100],
+    backgroundColor: tailwindColors.gray[100],
   },
   header: {
     flexDirection: "row",
@@ -79,12 +91,12 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   title: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: "600",
     color: "#333",
   },
   viewAll: {
-    fontSize: 16,
+    fontSize: 14,
     color: "#007AFF",
     fontWeight: "500",
   },
@@ -92,31 +104,28 @@ const styles = StyleSheet.create({
     padding: 16,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
     backgroundColor: "white",
-    elevation: 3,
   },
   transactionInfo: {
     flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   merchant: {
     fontSize: 16,
     fontWeight: "600",
-    color: tailwindColors.stone[800],
-    marginBottom: 4,
+    color: tailwindColors.gray[800],
   },
-  category: {
-    fontSize: 14,
-    color: tailwindColors.stone[600],
-    marginBottom: 4,
+  meta: {
+    gap: 4,
   },
   date: {
     fontSize: 12,
-    color: tailwindColors.stone[500],
+    color: tailwindColors.gray[500],
   },
   amount: {
     fontSize: 16,
-    fontWeight: "600",
-    color: tailwindColors.stone[800],
+    fontWeight: "700",
+    color: tailwindColors.gray[800],
   },
 });
