@@ -78,7 +78,6 @@ export const TransactionList = () => {
 const styles = StyleSheet.create({
   container: {
     paddingBottom: 40,
-    gap: 12,
   },
   listContainer: {
     gap: 1,
@@ -88,7 +87,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: 16,
+    marginTop: 32,
+    marginBottom: 8,
+    paddingHorizontal: 16,
   },
   title: {
     fontSize: 18,
