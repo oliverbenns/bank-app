@@ -1,19 +1,19 @@
+import { tailwindColors } from "@/theme";
 import { StyleSheet, Text, View } from "react-native";
+// import Svg, { G, Path, Polygon } from "react-native-svg";
 
 export const BalanceCard = () => {
   return (
     <View style={styles.card}>
-      <Text style={styles.label}>Current Balance</Text>
-      <Text style={styles.balance}>$15,200.45</Text>
-      <View style={styles.details}>
-        <View style={styles.detailItem}>
-          <Text style={styles.detailLabel}>Account</Text>
-          <Text style={styles.detailValue}>****1234</Text>
-        </View>
-        <View style={styles.detailItem}>
-          <Text style={styles.detailLabel}>Type</Text>
-          <Text style={styles.detailValue}>Checking</Text>
-        </View>
+      <Text style={styles.accountName}>Main Account</Text>
+      <Text style={styles.date}>Today, 28 Aug 2025</Text>
+      <View style={styles.cardBody}>
+        <Text style={styles.balance}>$10,000.00</Text>
+      </View>
+
+      <View style={styles.cardFooter}>
+        <Text style={styles.visa}>Visa</Text>
+        <Text style={styles.cardNumber}>•••• •••• •••• 1234</Text>
       </View>
     </View>
   );
@@ -21,42 +21,89 @@ export const BalanceCard = () => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: "white",
-    margin: 20,
-    padding: 20,
-    borderRadius: 16,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 4,
+    backgroundColor: tailwindColors.blue[700],
+    padding: 16,
+    borderRadius: 8,
+    //  ISO/IEC 7810 ID-1
+    aspectRatio: 1.586,
   },
-  label: {
+  accountName: {
     fontSize: 16,
-    color: "#666",
-    marginBottom: 8,
+    fontWeight: "500",
+    color: tailwindColors.white,
+  },
+  date: {
+    fontSize: 11,
+    color: tailwindColors.white,
+    marginTop: 4,
+  },
+  cardNumber: {
+    fontSize: 12,
+    fontWeight: "600",
+    color: tailwindColors.white,
+    opacity: 0.8,
+  },
+  cardBody: {
+    justifyContent: "center",
+    flex: 1,
   },
   balance: {
-    fontSize: 32,
-    fontWeight: "bold",
-    color: "#007AFF",
-    marginBottom: 16,
+    fontSize: 28,
+    fontWeight: "700",
+    color: tailwindColors.white,
   },
-  details: {
+  visa: {
+    fontSize: 16,
+    fontWeight: "700",
+    textTransform: "uppercase",
+    color: tailwindColors.white,
+    opacity: 0.8,
+    fontStyle: "italic",
+  },
+  cardFooter: {
     flexDirection: "row",
+    alignItems: "center",
     justifyContent: "space-between",
   },
-  detailItem: {
-    alignItems: "center",
-  },
-  detailLabel: {
-    fontSize: 12,
-    color: "#999",
-    marginBottom: 4,
-  },
-  detailValue: {
-    fontSize: 14,
-    fontWeight: "600",
-    color: "#333",
-  },
 });
+
+// const VisaSVG = () => {
+//   return (
+//     <Svg>
+//       <G
+//         id="g4158"
+//         transform="matrix(4.4299631,0,0,4.4299631,-81.165783,-105.04783)"
+//       >
+//         <Polygon
+//           points="116.145,95.719 97.858,95.719 109.296,24.995 127.582,24.995 "
+//           id="polygon9"
+//           fill={tailwindColors.white}
+//         />
+//         <Path
+//           d="m 182.437,26.724 c -3.607,-1.431 -9.328,-3.011 -16.402,-3.011 -18.059,0 -30.776,9.63 -30.854,23.398 -0.15,10.158 9.105,15.8 16.027,19.187 7.075,3.461 9.48,5.72 9.48,8.805 -0.072,4.738 -5.717,6.922 -10.982,6.922 -7.301,0 -11.213,-1.126 -17.158,-3.762 l -2.408,-1.13 -2.559,15.876 c 4.289,1.954 12.191,3.688 20.395,3.764 19.188,0 31.68,-9.481 31.828,-24.153 0.073,-8.051 -4.814,-14.22 -15.35,-19.261 -6.396,-3.236 -10.313,-5.418 -10.313,-8.729 0.075,-3.01 3.313,-6.093 10.533,-6.093 5.945,-0.151 10.313,1.278 13.622,2.708 l 1.654,0.751 2.487,-15.272 0,0 z"
+//           id="path11"
+//           inkscape:connector-curvature="0"
+//           fill={tailwindColors.white}
+//         />
+//         <Path
+//           d="m 206.742,70.664 c 1.506,-4.063 7.301,-19.788 7.301,-19.788 -0.076,0.151 1.503,-4.138 2.406,-6.771 l 1.278,6.094 c 0,0 3.463,16.929 4.215,20.465 -2.858,0 -11.588,0 -15.2,0 l 0,0 z m 22.573,-45.669 -14.145,0 c -4.362,0 -7.676,1.278 -9.558,5.868 l -27.163,64.855 19.188,0 c 0,0 3.159,-8.729 3.838,-10.609 2.105,0 20.771,0 23.479,0 0.525,2.483 2.182,10.609 2.182,10.609 l 16.932,0 -14.753,-70.723 0,0 z"
+//           id="path13"
+//           inkscape:connector-curvature="0"
+//           fill={tailwindColors.white}
+//         />
+//         <Path
+//           d="M 82.584,24.995 64.675,73.222 62.718,63.441 C 59.407,52.155 49.023,39.893 37.435,33.796 l 16.404,61.848 19.338,0 28.744,-70.649 -19.337,0 0,0 z"
+//           id="path15"
+//           inkscape:connector-curvature="0"
+//           fill={tailwindColors.white}
+//         />
+//         <Path
+//           d="m 48.045,24.995 -29.422,0 -0.301,1.429 c 22.951,5.869 38.151,20.016 44.396,37.02 L 56.322,30.94 c -1.053,-4.517 -4.289,-5.796 -8.277,-5.945 l 0,0 z"
+//           id="path17"
+//           inkscape:connector-curvature="0"
+//           fill="#faa61a"
+//         />
+//       </G>
+//     </Svg>
+//   );
+// };

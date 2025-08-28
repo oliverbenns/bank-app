@@ -21,11 +21,6 @@ export default function AnalyticsScreen() {
 
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Analytics</Text>
-        <Text style={styles.subtitle}>Your financial insights</Text>
-      </View>
-
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Monthly Overview</Text>
         <View style={styles.overviewCard}>
@@ -121,22 +116,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f5f5f5",
   },
-  header: {
-    backgroundColor: "#5856D6",
-    padding: 40,
-    paddingTop: 60,
-    alignItems: "center",
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: "bold",
-    color: "white",
-    marginBottom: 8,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: "rgba(255, 255, 255, 0.8)",
-  },
+
   section: {
     padding: 20,
   },

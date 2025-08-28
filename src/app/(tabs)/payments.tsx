@@ -9,11 +9,6 @@ import {
 export default function ExploreScreen() {
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Explore</Text>
-        <Text style={styles.subtitle}>Discover banking features</Text>
-      </View>
-
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Banking Services</Text>
 
@@ -80,22 +75,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f5f5f5",
   },
-  header: {
-    backgroundColor: "#34C759",
-    padding: 40,
-    paddingTop: 60,
-    alignItems: "center",
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: "bold",
-    color: "white",
-    marginBottom: 8,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: "rgba(255, 255, 255, 0.8)",
-  },
+
   section: {
     padding: 20,
   },

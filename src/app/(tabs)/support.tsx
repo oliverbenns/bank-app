@@ -25,11 +25,6 @@ export default function SupportScreen() {
 
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Support</Text>
-        <Text style={styles.subtitle}>We're here to help you</Text>
-      </View>
-
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Get Help</Text>
 
@@ -112,22 +107,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f5f5f5",
   },
-  header: {
-    backgroundColor: "#FF9500",
-    padding: 40,
-    paddingTop: 60,
-    alignItems: "center",
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: "bold",
-    color: "white",
-    marginBottom: 8,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: "rgba(255, 255, 255, 0.8)",
-  },
+
   section: {
     padding: 20,
   },

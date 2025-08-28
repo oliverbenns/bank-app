@@ -8,7 +8,6 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: "#007AFF",
-        headerShown: false,
         tabBarStyle: Platform.select({
           ios: {
             position: "absolute",

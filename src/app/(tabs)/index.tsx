@@ -1,21 +1,24 @@
 import { BalanceCard } from "@/components/balance-card";
-import { Header } from "@/components/header";
 import { TransactionList } from "@/features/transactions/list";
-import { ScrollView, StyleSheet } from "react-native";
+import { tailwindColors } from "@/theme";
+import { ScrollView, StyleSheet, View } from "react-native";
 
 export default function HomeScreen() {
   return (
-    <ScrollView style={styles.container}>
-      <Header />
-      <BalanceCard />
-      <TransactionList />
-    </ScrollView>
+    <>
+      <ScrollView style={styles.container}>
+        <View style={{ padding: 16, paddingHorizontal: 48 }}>
+          <BalanceCard />
+        </View>
+        <TransactionList />
+      </ScrollView>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: tailwindColors.stone[50],
   },
 });

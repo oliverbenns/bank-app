@@ -1,3 +1,4 @@
+import { tailwindColors } from "@/theme";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { sampleTransactions } from "./data";
 import { getMccCategory } from "./mcc";
@@ -12,58 +13,70 @@ export const TransactionList = () => {
         </TouchableOpacity>
       </View>
 
-      {sampleTransactions.map((transaction) => {
-        const mccCategory = getMccCategory(transaction.mcc);
-        return (
-          <View key={transaction.id} style={styles.transactionItem}>
-            <View
-              style={{ flexDirection: "row", alignItems: "center", flex: 1 }}
-            >
-              {/* Square icon */}
+      <View style={styles.listContainer}>
+        {sampleTransactions.map((transaction) => {
+          const mccCategory = getMccCategory(transaction.mcc);
+          return (
+            <View key={transaction.id} style={styles.transactionItem}>
               <View
-                style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: 8,
-                  backgroundColor: mccCategory.backgroundColor,
-                  marginRight: 14,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
+                style={{ flexDirection: "row", alignItems: "center", flex: 1 }}
               >
-                <mccCategory.icon size={24} color={mccCategory.color} />
+                <View
+                  style={{
+                    width: 44,
+                    height: 44,
+                    borderRadius: 10,
+                    backgroundColor: mccCategory.backgroundColor,
+                    marginRight: 14,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <mccCategory.icon size={21} color={mccCategory.color} />
+                </View>
+                <View style={styles.transactionInfo}>
+                  <Text style={styles.merchant}>
+                    {transaction.merchantName}
+                  </Text>
+                  <Text style={styles.date}>{transaction.date}</Text>
+                </View>
               </View>
-              <View style={styles.transactionInfo}>
-                <Text style={styles.merchant}>{transaction.merchantName}</Text>
-                <Text style={styles.date}>{transaction.date}</Text>
-              </View>
+              <Text
+                style={[
+                  styles.amount,
+                  {
+                    color:
+                      transaction.type === "credit"
+                        ? tailwindColors.green[500]
+                        : styles.amount.color,
+                  },
+                ]}
+              >
+                {transaction.type === "credit" ? "+" : ""}$
+                {Math.abs(transaction.amount).toFixed(2)}
+              </Text>
             </View>
-            <Text
-              style={[
-                styles.amount,
-                { color: transaction.amount > 0 ? "#34C759" : "#FF3B30" },
-              ]}
-            >
-              {transaction.amount > 0 ? "+" : ""}$
-              {Math.abs(transaction.amount).toFixed(2)}
-            </Text>
-          </View>
-        );
-      })}
+          );
+        })}
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
     paddingBottom: 40,
+    gap: 12,
+  },
+  listContainer: {
+    gap: 1,
+    backgroundColor: tailwindColors.stone[100],
   },
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: 16,
+    padding: 16,
   },
   title: {
     fontSize: 20,
@@ -76,17 +89,11 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   transactionItem: {
-    backgroundColor: "white",
     padding: 16,
-    borderRadius: 12,
-    marginBottom: 12,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
+    backgroundColor: "white",
     elevation: 3,
   },
   transactionInfo: {
@@ -95,20 +102,21 @@ const styles = StyleSheet.create({
   merchant: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#333",
+    color: tailwindColors.stone[800],
     marginBottom: 4,
   },
   category: {
     fontSize: 14,
-    color: "#666",
+    color: tailwindColors.stone[600],
     marginBottom: 4,
   },
   date: {
     fontSize: 12,
-    color: "#999",
+    color: tailwindColors.stone[500],
   },
   amount: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "600",
+    color: tailwindColors.stone[800],
   },
 });
