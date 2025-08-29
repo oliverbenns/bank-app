@@ -1,11 +1,8 @@
 import { tailwindColors } from "@/theme";
 import { useRouter } from "expo-router";
-import { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   const router = useRouter();
 
   const onLogin = () => {
@@ -26,7 +23,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    // padding: 24,
+    paddingHorizontal: 24,
     backgroundColor: tailwindColors.white,
   },
 
