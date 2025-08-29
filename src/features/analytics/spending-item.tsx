@@ -1,3 +1,4 @@
+import { tailwindColors } from "@/theme";
 import { StyleSheet, Text, View } from "react-native";
 import { SpendingCategory } from "./model";
 import { ProgressBar } from "./progress-bar";
@@ -23,17 +24,18 @@ export const SpendingItem = ({
 const styles = StyleSheet.create({
   meta: {
     flexDirection: "row",
+    alignItems: "center",
     justifyContent: "space-between",
     marginBottom: 8,
   },
   name: {
     fontSize: 16,
-    fontWeight: "500",
-    color: "#333",
+    fontWeight: "600",
+    color: tailwindColors.gray[800],
   },
   amount: {
     fontSize: 16,
-    fontWeight: "600",
-    color: "#007AFF",
+    fontWeight: "700",
+    color: tailwindColors.gray[800],
   },
 });

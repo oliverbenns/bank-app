@@ -1,7 +1,7 @@
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 
-export default function RootLayout() {
+export default () => {
   return (
     <>
       <Stack>
@@ -10,4 +10,4 @@ export default function RootLayout() {
       <StatusBar style="auto" />
     </>
   );
-}
+};

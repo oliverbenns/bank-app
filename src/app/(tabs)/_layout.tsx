@@ -1,13 +1,14 @@
+import { tailwindColors } from "@/theme";
 import { Tabs } from "expo-router";
 import { BarChart3, CreditCard, HelpCircle, Home } from "lucide-react-native";
 import React from "react";
 import { Platform } from "react-native";
 
-export default function TabLayout() {
+export default () => {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "#007AFF",
+        tabBarActiveTintColor: tailwindColors.blue[600],
         tabBarStyle: Platform.select({
           ios: {
             position: "absolute",
@@ -46,4 +47,4 @@ export default function TabLayout() {
       />
     </Tabs>
   );
-}
+};

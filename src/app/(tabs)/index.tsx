@@ -4,7 +4,7 @@ import { TabScreen } from "@/components/tab-screen";
 import { Card } from "@/features/transactions/card";
 import { CardControls } from "@/features/transactions/card-controls";
 import { sampleTransactions } from "@/features/transactions/data";
-import { TransactionItem } from "@/features/transactions/item";
+import { TransactionItem } from "@/features/transactions/transaction-item";
 import { tailwindColors } from "@/theme";
 import { FlatList, StyleSheet, View } from "react-native";
 
@@ -26,7 +26,7 @@ const cardTypes = [
   },
 ] as const;
 
-export default function HomeScreen() {
+export default () => {
   return (
     <TabScreen>
       <View style={styles.cardContainer}>
@@ -56,10 +56,11 @@ export default function HomeScreen() {
       <ItemList
         data={sampleTransactions}
         renderItem={(item) => <TransactionItem {...item} />}
+        keyExtractor={(item) => item.id}
       />
     </TabScreen>
   );
-}
+};
 
 const styles = StyleSheet.create({
   cardContainer: {

@@ -1,3 +1,4 @@
+import { tailwindColors } from "@/theme";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
@@ -34,11 +35,11 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#333",
+    color: tailwindColors.gray[800],
   },
   viewAll: {
     fontSize: 14,
-    color: "#007AFF",
+    color: tailwindColors.blue[600],
     fontWeight: "500",
   },
 });

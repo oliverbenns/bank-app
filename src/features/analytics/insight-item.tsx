@@ -53,14 +53,18 @@ const styles = StyleSheet.create({
   },
   meta: {
     gap: 4,
+    backgroundColor: "red",
+    flex: 1,
+    flexWrap: "wrap",
   },
   title: {
-    fontSize: 16,
-    fontWeight: "600",
+    fontSize: 17,
+    fontWeight: "700",
     color: tailwindColors.gray[800],
+    marginBottom: 2,
   },
   description: {
-    fontSize: 12,
+    fontSize: 14,
     color: tailwindColors.gray[500],
   },
   icon: {

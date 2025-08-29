@@ -32,7 +32,7 @@ const controls: ControlButton[] = [
   },
 ];
 
-export function CardControls() {
+export const CardControls = () => {
   return (
     <View style={styles.container}>
       {controls.map((control) => (
@@ -58,7 +58,7 @@ export function CardControls() {
       ))}
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

@@ -4,15 +4,22 @@ import { StyleSheet, View } from "react-native";
 type ItemListProps<T> = {
   data: T[];
   renderItem: (item: T, index: number) => React.ReactNode;
+  keyExtractor: (item: T) => string;
 };
 
-export const ItemList = <T,>({ data, renderItem }: ItemListProps<T>) => {
+export const ItemList = <T,>({
+  data,
+  renderItem,
+  keyExtractor,
+}: ItemListProps<T>) => {
   return (
     <View>
       <View style={styles.list}>
         {data.map((item, index) => {
+          const key = keyExtractor(item);
+
           return (
-            <View key={index} style={styles.item}>
+            <View key={key} style={styles.item}>
               {renderItem(item, index)}
             </View>
           );
@@ -29,6 +36,6 @@ const styles = StyleSheet.create({
   },
   item: {
     padding: 16,
-    backgroundColor: "white",
+    backgroundColor: tailwindColors.white,
   },
 });

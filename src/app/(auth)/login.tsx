@@ -1,14 +1,9 @@
+import { tailwindColors } from "@/theme";
 import { useRouter } from "expo-router";
 import { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function LoginScreen() {
+export default () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
@@ -20,61 +15,29 @@ export default function LoginScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Username"
-        autoCapitalize="none"
-        value={username}
-        onChangeText={setUsername}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        secureTextEntry
-        value={password}
-        onChangeText={setPassword}
-      />
       <TouchableOpacity style={styles.button} onPress={onLogin}>
-        <Text style={styles.buttonText}>Submit</Text>
+        <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    padding: 24,
-    backgroundColor: "#fff",
+    // padding: 24,
+    backgroundColor: tailwindColors.white,
   },
-  title: {
-    fontSize: 28,
-    fontWeight: "bold",
-    marginBottom: 32,
-    alignSelf: "center",
-    color: "#007AFF",
-  },
-  input: {
-    height: 48,
-    borderColor: "#ccc",
-    borderWidth: 1,
-    borderRadius: 8,
-    marginBottom: 16,
-    paddingHorizontal: 12,
-    fontSize: 16,
-    backgroundColor: "#f9f9f9",
-  },
+
   button: {
-    backgroundColor: "#007AFF",
+    backgroundColor: tailwindColors.blue[600],
     paddingVertical: 14,
     borderRadius: 8,
     alignItems: "center",
-    marginTop: 8,
   },
   buttonText: {
-    color: "#fff",
+    color: tailwindColors.white,
     fontSize: 18,
     fontWeight: "600",
   },
