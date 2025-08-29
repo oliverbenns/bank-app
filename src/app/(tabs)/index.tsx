@@ -36,12 +36,11 @@ export default () => {
           pagingEnabled
           showsHorizontalScrollIndicator={false}
           keyExtractor={(item) => item.id}
-          // snapToInterval={280}
-          snapToOffsets={[0, 280, 560]}
+          snapToInterval={280 + 16}
+          decelerationRate="fast"
           contentContainerStyle={{
-            // gap: 16,
-            paddingRight: 280,
-            // paddingHorizontal: 64,
+            gap: 16,
+            paddingHorizontal: 64,
           }}
           renderItem={({ item }) => (
             <View style={{ width: 280 }}>
@@ -49,7 +48,9 @@ export default () => {
             </View>
           )}
         />
-        <CardControls />
+        <View style={styles.cardControls}>
+          <CardControls />
+        </View>
       </View>
 
       <SectionHeader title="Activity" onViewAllPress={() => {}} />
@@ -66,5 +67,8 @@ const styles = StyleSheet.create({
   cardContainer: {
     paddingVertical: 16,
     backgroundColor: colors.white,
+  },
+  cardControls: {
+    marginTop: 16,
   },
 });
