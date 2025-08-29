@@ -1,8 +1,12 @@
-import { Card } from "@/components/card";
-import { CardControls } from "@/components/card-controls";
-import { TransactionList } from "@/features/transactions/list";
+import { ItemList } from "@/components/item-list";
+import { SectionHeader } from "@/components/section-header";
+import { TabScreen } from "@/components/tab-screen";
+import { Card } from "@/features/transactions/card";
+import { CardControls } from "@/features/transactions/card-controls";
+import { sampleTransactions } from "@/features/transactions/data";
+import { TransactionItem } from "@/features/transactions/item";
 import { tailwindColors } from "@/theme";
-import { FlatList, ScrollView, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 
 const cardTypes = [
   {
@@ -24,42 +28,40 @@ const cardTypes = [
 
 export default function HomeScreen() {
   return (
-    <>
-      <ScrollView style={styles.container}>
-        <View style={styles.cardContainer}>
-          <FlatList
-            data={cardTypes}
-            horizontal
-            pagingEnabled
-            showsHorizontalScrollIndicator={false}
-            keyExtractor={(item) => item.id}
-            // snapToInterval={280}
-            snapToOffsets={[0, 280, 560]}
-            contentContainerStyle={{
-              // gap: 16,
-              paddingRight: 280,
-              // paddingHorizontal: 64,
-            }}
-            renderItem={({ item }) => (
-              <View style={{ width: 280 }}>
-                <Card type={item.type} accountName={item.accountName} />
-              </View>
-            )}
-          />
-          <View style={{ marginTop: 16 }}></View>
-          <CardControls />
-        </View>
-        <TransactionList />
-      </ScrollView>
-    </>
+    <TabScreen>
+      <View style={styles.cardContainer}>
+        <FlatList
+          data={cardTypes}
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={(item) => item.id}
+          // snapToInterval={280}
+          snapToOffsets={[0, 280, 560]}
+          contentContainerStyle={{
+            // gap: 16,
+            paddingRight: 280,
+            // paddingHorizontal: 64,
+          }}
+          renderItem={({ item }) => (
+            <View style={{ width: 280 }}>
+              <Card type={item.type} accountName={item.accountName} />
+            </View>
+          )}
+        />
+        <CardControls />
+      </View>
+
+      <SectionHeader title="Activity" onViewAllPress={() => {}} />
+      <ItemList
+        data={sampleTransactions}
+        renderItem={(item) => <TransactionItem {...item} />}
+      />
+    </TabScreen>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: tailwindColors.gray[50],
-  },
   cardContainer: {
     paddingVertical: 16,
     backgroundColor: tailwindColors.white,

@@ -1,6 +1,6 @@
+import { TabScreen } from "@/components/tab-screen";
 import {
   Linking,
-  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -24,7 +24,7 @@ export default function SupportScreen() {
   };
 
   return (
-    <ScrollView style={styles.container}>
+    <TabScreen>
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Get Help</Text>
 
@@ -98,7 +98,7 @@ export default function SupportScreen() {
           </View>
         </TouchableOpacity>
       </View>
-    </ScrollView>
+    </TabScreen>
   );
 }
 

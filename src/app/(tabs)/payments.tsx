@@ -1,14 +1,9 @@
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { TabScreen } from "@/components/tab-screen";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function ExploreScreen() {
   return (
-    <ScrollView style={styles.container}>
+    <TabScreen>
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Banking Services</Text>
 
@@ -66,16 +61,11 @@ export default function ExploreScreen() {
           <Text style={styles.helpText}>Find answers to common questions</Text>
         </TouchableOpacity>
       </View>
-    </ScrollView>
+    </TabScreen>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#f5f5f5",
-  },
-
   section: {
     padding: 20,
   },
