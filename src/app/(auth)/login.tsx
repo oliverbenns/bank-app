@@ -23,10 +23,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    paddingHorizontal: 24,
+    paddingHorizontal: 48,
     backgroundColor: tailwindColors.white,
   },
-
   button: {
     backgroundColor: tailwindColors.blue[600],
     paddingVertical: 14,
