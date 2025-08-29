@@ -1,4 +1,4 @@
-import { tailwindColors } from "@/theme";
+import { colors } from "@/theme";
 import { StyleSheet, View } from "react-native";
 
 type ProgressBarProps = {
@@ -24,11 +24,11 @@ const styles = StyleSheet.create({
   bar: {
     borderRadius: 4,
     height: 8,
-    backgroundColor: tailwindColors.gray[100],
+    backgroundColor: colors.gray[100],
   },
   fill: {
     height: "100%",
     borderRadius: 4,
-    backgroundColor: tailwindColors.blue[500],
+    backgroundColor: colors.blue[500],
   },
 });

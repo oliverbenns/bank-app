@@ -1,4 +1,4 @@
-import { tailwindColors } from "@/theme";
+import { colors } from "@/theme";
 import { StyleSheet, View } from "react-native";
 
 type ItemListProps<T> = {
@@ -32,10 +32,10 @@ export const ItemList = <T,>({
 const styles = StyleSheet.create({
   list: {
     gap: 1,
-    backgroundColor: tailwindColors.gray[100],
+    backgroundColor: colors.gray[100],
   },
   item: {
     padding: 16,
-    backgroundColor: tailwindColors.white,
+    backgroundColor: colors.white,
   },
 });

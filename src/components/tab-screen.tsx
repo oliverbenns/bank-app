@@ -1,4 +1,4 @@
-import { tailwindColors } from "@/theme";
+import { colors } from "@/theme";
 import { ScrollView, StyleSheet } from "react-native";
 
 type TabScreenProps = {
@@ -12,7 +12,7 @@ export const TabScreen = ({ children }: TabScreenProps) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: tailwindColors.gray[50],
+    backgroundColor: colors.gray[50],
     marginBottom: 80,
   },
 });

@@ -1,4 +1,4 @@
-import { tailwindColors } from "@/theme";
+import { colors } from "@/theme";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { PaymentService } from "./data";
 
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: tailwindColors.blue[600],
+    backgroundColor: colors.blue[600],
     justifyContent: "center",
     alignItems: "center",
     marginRight: 12,
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   icon: {
     fontSize: 14,
     fontWeight: "600",
-    color: tailwindColors.white,
+    color: colors.white,
   },
   content: {
     flex: 1,
@@ -51,12 +51,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
     fontWeight: "600",
-    color: tailwindColors.gray[800],
+    color: colors.gray[800],
     marginBottom: 2,
   },
   description: {
     fontSize: 14,
-    color: tailwindColors.gray[500],
+    color: colors.gray[500],
     lineHeight: 18,
   },
 });

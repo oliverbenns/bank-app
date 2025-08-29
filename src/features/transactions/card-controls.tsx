@@ -1,4 +1,4 @@
-import { tailwindColors } from "@/theme";
+import { colors } from "@/theme";
 import { CreditCard, LucideIcon, Send, Snowflake } from "lucide-react-native";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
@@ -47,11 +47,11 @@ export const CardControls = () => {
               styles.iconContainer,
               {
                 borderWidth: 1,
-                borderColor: tailwindColors.gray[300],
+                borderColor: colors.gray[300],
               },
             ]}
           >
-            <control.icon size={21} color={tailwindColors.blue[500]} />
+            <control.icon size={21} color={colors.blue[500]} />
           </View>
           <Text style={styles.buttonText}>{control.title}</Text>
         </TouchableOpacity>
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 12,
     fontWeight: "600",
-    color: tailwindColors.gray[700],
+    color: colors.gray[700],
     textAlign: "center",
   },
 });

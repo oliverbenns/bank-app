@@ -1,4 +1,4 @@
-import { tailwindColors } from "@/theme";
+import { colors } from "@/theme";
 import { StyleSheet, Text, View } from "react-native";
 import { SpendingCategory } from "./model";
 import { ProgressBar } from "./progress-bar";
@@ -31,11 +31,11 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 16,
     fontWeight: "600",
-    color: tailwindColors.gray[800],
+    color: colors.gray[800],
   },
   amount: {
     fontSize: 16,
     fontWeight: "700",
-    color: tailwindColors.gray[800],
+    color: colors.gray[800],
   },
 });

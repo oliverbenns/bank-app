@@ -7,7 +7,7 @@ import {
 } from "@/features/analytics/data";
 import { InsightItem } from "@/features/analytics/insight-item";
 import { SpendingItem } from "@/features/analytics/spending-item";
-import { tailwindColors } from "@/theme";
+import { colors } from "@/theme";
 import { StyleSheet, View } from "react-native";
 import { CartesianChart, Line } from "victory-native";
 
@@ -25,7 +25,7 @@ export default () => {
             // 👇 and we'll use the Line component to render a line path.
             <Line
               points={points.amount}
-              color={tailwindColors.blue[500]}
+              color={colors.blue[500]}
               strokeWidth={3}
               curveType="monotoneX"
             />
@@ -53,7 +53,7 @@ export default () => {
 const styles = StyleSheet.create({
   chartContainer: {
     height: 200,
-    backgroundColor: tailwindColors.white,
+    backgroundColor: colors.white,
     paddingVertical: 16,
   },
 });

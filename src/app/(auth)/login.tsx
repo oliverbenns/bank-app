@@ -1,4 +1,4 @@
-import { tailwindColors } from "@/theme";
+import { colors } from "@/theme";
 import { useRouter } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
@@ -24,16 +24,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     paddingHorizontal: 48,
-    backgroundColor: tailwindColors.white,
+    backgroundColor: colors.white,
   },
   button: {
-    backgroundColor: tailwindColors.blue[600],
+    backgroundColor: colors.blue[600],
     paddingVertical: 14,
     borderRadius: 8,
     alignItems: "center",
   },
   buttonText: {
-    color: tailwindColors.white,
+    color: colors.white,
     fontSize: 18,
     fontWeight: "600",
   },

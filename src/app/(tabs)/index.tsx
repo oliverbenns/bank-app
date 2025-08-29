@@ -5,7 +5,7 @@ import { Card } from "@/features/transactions/card";
 import { CardControls } from "@/features/transactions/card-controls";
 import { sampleTransactions } from "@/features/transactions/data";
 import { TransactionItem } from "@/features/transactions/transaction-item";
-import { tailwindColors } from "@/theme";
+import { colors } from "@/theme";
 import { FlatList, StyleSheet, View } from "react-native";
 
 const cardTypes = [
@@ -65,6 +65,6 @@ export default () => {
 const styles = StyleSheet.create({
   cardContainer: {
     paddingVertical: 16,
-    backgroundColor: tailwindColors.white,
+    backgroundColor: colors.white,
   },
 });

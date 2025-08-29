@@ -1,7 +1,7 @@
 // Tailwind CSS Color Palette - Hex Values
 // Source: https://tailwindcss.com/docs/colors
 
-export const tailwindColors = {
+export const colors = {
   // Red
   red: {
     50: "#fef2f2",
@@ -363,7 +363,7 @@ export const {
   stone,
   black,
   white,
-} = tailwindColors;
+} = colors;
 
 // Type for color scale
 export type ColorScale = {
@@ -381,4 +381,4 @@ export type ColorScale = {
 };
 
 // Type for the entire color palette
-export type TailwindColorPalette = typeof tailwindColors;
+export type TailwindColorPalette = typeof colors;

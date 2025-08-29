@@ -1,4 +1,4 @@
-import { tailwindColors } from "@/theme";
+import { colors } from "@/theme";
 import {
   Banknote,
   Bed,
@@ -76,53 +76,53 @@ type MccCategory = {
 export const mccCategories: Record<string, MccCategory> = {
   "0001-1499": {
     icon: Wheat,
-    color: tailwindColors.green[50],
-    backgroundColor: tailwindColors.green[600],
+    color: colors.green[50],
+    backgroundColor: colors.green[600],
   },
   "1500-2999": {
     icon: Wrench,
-    color: tailwindColors.purple[50],
-    backgroundColor: tailwindColors.purple[600],
+    color: colors.purple[50],
+    backgroundColor: colors.purple[600],
   },
   "4000-4799": {
     icon: Car,
-    color: tailwindColors.sky[50],
-    backgroundColor: tailwindColors.sky[600],
+    color: colors.sky[50],
+    backgroundColor: colors.sky[600],
   },
   "4800-4999": {
     icon: Zap,
-    color: tailwindColors.yellow[50],
-    backgroundColor: tailwindColors.yellow[600],
+    color: colors.yellow[50],
+    backgroundColor: colors.yellow[600],
   },
   "5000-5599": {
     icon: ShoppingBag,
-    color: tailwindColors.emerald[50],
-    backgroundColor: tailwindColors.emerald[600],
+    color: colors.emerald[50],
+    backgroundColor: colors.emerald[600],
   },
   "5600-5699": {
     icon: Shirt,
-    color: tailwindColors.red[50],
-    backgroundColor: tailwindColors.red[600],
+    color: colors.red[50],
+    backgroundColor: colors.red[600],
   },
   "5700-7299": {
     icon: Store,
-    color: tailwindColors.orange[50],
-    backgroundColor: tailwindColors.orange[600],
+    color: colors.orange[50],
+    backgroundColor: colors.orange[600],
   },
   "7300-7999": {
     icon: Building2,
-    color: tailwindColors.blue[50],
-    backgroundColor: tailwindColors.blue[600],
+    color: colors.blue[50],
+    backgroundColor: colors.blue[600],
   },
   "8000-8999": {
     icon: Users,
-    color: tailwindColors.sky[50],
-    backgroundColor: tailwindColors.sky[600],
+    color: colors.sky[50],
+    backgroundColor: colors.sky[600],
   },
   "9000-9999": {
     icon: Landmark,
-    color: tailwindColors.purple[50],
-    backgroundColor: tailwindColors.purple[600],
+    color: colors.purple[50],
+    backgroundColor: colors.purple[600],
   },
 };
 
@@ -245,8 +245,8 @@ export const getMccCategory = (mcc: string): MccCategory => {
   } else {
     category = {
       icon: Shapes,
-      color: tailwindColors.gray[50],
-      backgroundColor: tailwindColors.gray[600],
+      color: colors.gray[50],
+      backgroundColor: colors.gray[600],
     };
   }
 

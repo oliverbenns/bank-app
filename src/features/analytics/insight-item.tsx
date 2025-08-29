@@ -1,4 +1,4 @@
-import { tailwindColors } from "@/theme";
+import { colors } from "@/theme";
 import {
   AlertCircle,
   CheckCircle,
@@ -15,15 +15,15 @@ type InsightIcon = {
 
 const iconsByType: Record<InsightType, InsightIcon> = {
   success: {
-    color: tailwindColors.green[500],
+    color: colors.green[500],
     icon: CheckCircle,
   },
   warn: {
-    color: tailwindColors.yellow[500],
+    color: colors.yellow[500],
     icon: AlertCircle,
   },
   idea: {
-    color: tailwindColors.blue[500],
+    color: colors.blue[500],
     icon: Lightbulb,
   },
 };
@@ -52,25 +52,24 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   meta: {
-    gap: 4,
-    backgroundColor: "red",
+    gap: 2,
     flex: 1,
     flexWrap: "wrap",
   },
   title: {
     fontSize: 17,
     fontWeight: "700",
-    color: tailwindColors.gray[800],
+    color: colors.gray[800],
     marginBottom: 2,
   },
   description: {
     fontSize: 14,
-    color: tailwindColors.gray[500],
+    color: colors.gray[500],
+    width: "100%",
   },
   icon: {
     width: 44,
     height: 44,
-    justifyContent: "center",
     alignItems: "center",
     marginRight: 12,
   },

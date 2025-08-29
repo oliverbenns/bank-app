@@ -1,12 +1,12 @@
-import { tailwindColors } from "@/theme";
+import { colors } from "@/theme";
 import { StyleSheet, Text, View } from "react-native";
 
 type CardType = "main" | "secondary" | "tertiary";
 
 const cardColors: Record<CardType, string> = {
-  main: tailwindColors.blue[600],
-  secondary: tailwindColors.orange[500],
-  tertiary: tailwindColors.gray[400],
+  main: colors.blue[600],
+  secondary: colors.orange[500],
+  tertiary: colors.gray[400],
 };
 
 type CardProps = {
@@ -40,7 +40,7 @@ export const Card = ({ type, accountName }: CardProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: tailwindColors.blue[700],
+    backgroundColor: colors.blue[700],
     padding: 16,
     borderRadius: 8,
     //  ISO/IEC 7810 ID-1
@@ -49,17 +49,17 @@ const styles = StyleSheet.create({
   accountName: {
     fontSize: 16,
     fontWeight: "500",
-    color: tailwindColors.white,
+    color: colors.white,
   },
   date: {
     fontSize: 11,
-    color: tailwindColors.white,
+    color: colors.white,
     marginTop: 4,
   },
   number: {
     fontSize: 12,
     fontWeight: "600",
-    color: tailwindColors.gray[200],
+    color: colors.gray[200],
   },
   body: {
     justifyContent: "center",
@@ -68,13 +68,13 @@ const styles = StyleSheet.create({
   balance: {
     fontSize: 28,
     fontWeight: "700",
-    color: tailwindColors.white,
+    color: colors.white,
   },
   visa: {
     fontSize: 16,
     fontWeight: "700",
     textTransform: "uppercase",
-    color: tailwindColors.white,
+    color: colors.white,
     opacity: 0.8,
     fontStyle: "italic",
   },

@@ -1,4 +1,4 @@
-import { tailwindColors } from "@/theme";
+import { colors } from "@/theme";
 import { StyleSheet, Text, View } from "react-native";
 import { getMccCategory } from "./mcc";
 import { Transaction } from "./model";
@@ -41,9 +41,7 @@ export const TransactionItem = ({
             styles.amount,
             {
               color:
-                type === "credit"
-                  ? tailwindColors.green[600]
-                  : styles.amount.color,
+                type === "credit" ? colors.green[600] : styles.amount.color,
             },
           ]}
         >
@@ -67,25 +65,25 @@ const styles = StyleSheet.create({
   merchant: {
     fontSize: 16,
     fontWeight: "600",
-    color: tailwindColors.gray[800],
+    color: colors.gray[800],
   },
   meta: {
     gap: 4,
   },
   date: {
     fontSize: 12,
-    color: tailwindColors.gray[500],
+    color: colors.gray[500],
   },
   amount: {
     fontSize: 16,
     fontWeight: "700",
-    color: tailwindColors.gray[800],
+    color: colors.gray[800],
   },
   icon: {
     width: 44,
     height: 44,
     borderRadius: 10,
-    backgroundColor: tailwindColors.gray[100],
+    backgroundColor: colors.gray[100],
     justifyContent: "center",
     alignItems: "center",
     marginRight: 12,
