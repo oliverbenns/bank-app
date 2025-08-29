@@ -1,10 +1,30 @@
 import { tailwindColors } from "@/theme";
 import { StyleSheet, Text, View } from "react-native";
 
-export const Card = () => {
+type CardType = "main" | "secondary" | "tertiary";
+
+const cardColors: Record<CardType, string> = {
+  main: tailwindColors.blue[600],
+  secondary: tailwindColors.orange[500],
+  tertiary: tailwindColors.gray[400],
+};
+
+type CardProps = {
+  type: CardType;
+  accountName: string;
+};
+
+export const Card = ({ type, accountName }: CardProps) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.accountName}>Main Account</Text>
+    <View
+      style={[
+        styles.container,
+        {
+          backgroundColor: cardColors[type],
+        },
+      ]}
+    >
+      <Text style={styles.accountName}>{accountName}</Text>
       <Text style={styles.date}>Today, 28 Aug 2025</Text>
       <View style={styles.body}>
         <Text style={styles.balance}>$10,000.00</Text>

@@ -1,11 +1,5 @@
 import { tailwindColors } from "@/theme";
-import {
-  CreditCard,
-  LucideIcon,
-  Send,
-  Snowflake,
-  TrendingUp,
-} from "lucide-react-native";
+import { CreditCard, LucideIcon, Send, Snowflake } from "lucide-react-native";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
@@ -13,37 +7,27 @@ type ControlButton = {
   id: string;
   title: string;
   icon: LucideIcon;
-  color: string;
+
   onPress: () => void;
 };
 
 const controls: ControlButton[] = [
   {
-    id: "topup",
-    title: "Top Up",
-    icon: TrendingUp,
-    color: tailwindColors.green[500],
-    onPress: () => console.log("Top Up pressed"),
-  },
-  {
     id: "send",
     title: "Send",
     icon: Send,
-    color: tailwindColors.blue[500],
     onPress: () => console.log("Send pressed"),
   },
   {
     id: "pay",
     title: "Pay",
     icon: CreditCard,
-    color: tailwindColors.purple[500],
     onPress: () => console.log("Pay pressed"),
   },
   {
     id: "freeze",
     title: "Freeze",
     icon: Snowflake,
-    color: tailwindColors.red[500],
     onPress: () => console.log("Freeze pressed"),
   },
 ];
@@ -79,12 +63,11 @@ export function CardControls() {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    gap: 8,
-    paddingVertical: 20,
+    gap: 24,
+    marginHorizontal: "auto",
   },
   button: {
     alignItems: "center",
-    flex: 1,
   },
   iconContainer: {
     width: 48,
