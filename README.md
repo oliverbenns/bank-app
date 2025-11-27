@@ -2,7 +2,9 @@
 
 This is a demo react native application for a bank.
 
-<video src="https://github.com/oliverbenns/bank-app/demo.mp4" width="320" height="240" controls></video>
+https://github.com/user-attachments/assets/5889bab9-08c7-4ef2-84e8-3091bf313c72
+
+
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
