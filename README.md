@@ -1,4 +1,8 @@
-# Welcome to your Expo app 👋
+# Bank App
+
+This is a demo react native application for a bank.
+
+<video src="demo.mp4" controls="controls" muted="muted" playsinline="playsinline" width="100%"></video>
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
